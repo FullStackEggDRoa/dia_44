@@ -15,11 +15,19 @@ public class servicioArregloReales {
     Scanner leer = new Scanner (System.in).useDelimiter("\n");
     
     public arregloReales crearArregloReales(){
-        System.out.println("Inicialización de Arreglo números Aleatorios");
-        float[] reales;
-        System.out.println("Ingrese longitud de Arreglo: ");
+        System.out.println("Inicialización del Arreglo");
+        System.out.print("Ingrese longitud del Arreglo: ");
         return new arregloReales(leer.nextInt());
+        
     }
-    
+    public void copiarArreglo(arregloReales array_o,arregloReales array_f,int m) {
+        for(int i=0;i<array_o.getLongitud();i++){
+            if(i<m){
+                array_f.getReales()[i]=array_o.getReales()[i];
+            }else if(i<array_f.getLongitud()){
+                array_f.getReales()[i]=0.5f;
+            }
+        }
+    }
     
 }
